@@ -4,14 +4,14 @@
 //
 //  Created by Samantha Stewart on 2023-06-01.
 //
-
+import Blackbird
 import SwiftUI
 
 @main
 struct AverageCalulatorApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
-        }
+            AddSubjectView()
+            .environment(\.blackbirdDatabase, AppDatabase.instance)       }
     }
 }

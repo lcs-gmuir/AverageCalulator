@@ -9,21 +9,29 @@
 /* Begin PBXBuildFile section */
 		98197E6C2A291A13009BA7FF /* Blackbird in Frameworks */ = {isa = PBXBuildFile; productRef = 98197E6B2A291A13009BA7FF /* Blackbird */; };
 		98197E6F2A291B39009BA7FF /* SubjectListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98197E6E2A291B39009BA7FF /* SubjectListView.swift */; };
+		98197E712A291BB4009BA7FF /* SubjectItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98197E702A291BB4009BA7FF /* SubjectItemView.swift */; };
+		98197E732A291D1E009BA7FF /* Subject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98197E722A291D1E009BA7FF /* Subject.swift */; };
+		98197E752A2921CA009BA7FF /* db.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = 98197E742A2921CA009BA7FF /* db.sqlite */; };
+		98197E782A292225009BA7FF /* AppDatabase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98197E772A292225009BA7FF /* AppDatabase.swift */; };
+		98197E7A2A292500009BA7FF /* AddSubjectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98197E792A292500009BA7FF /* AddSubjectView.swift */; };
 		98E3428F2A29156800B451EE /* AverageCalulatorApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98E3428E2A29156800B451EE /* AverageCalulatorApp.swift */; };
 		98E342912A29156800B451EE /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98E342902A29156800B451EE /* ContentView.swift */; };
 		98E342932A29156C00B451EE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 98E342922A29156C00B451EE /* Assets.xcassets */; };
 		98E342962A29156C00B451EE /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 98E342952A29156C00B451EE /* Preview Assets.xcassets */; };
-		98E3429E2A29162F00B451EE /* db.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = 98E3429D2A29162F00B451EE /* db.sqlite */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		98197E6E2A291B39009BA7FF /* SubjectListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubjectListView.swift; sourceTree = "<group>"; };
+		98197E702A291BB4009BA7FF /* SubjectItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubjectItemView.swift; sourceTree = "<group>"; };
+		98197E722A291D1E009BA7FF /* Subject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Subject.swift; sourceTree = "<group>"; };
+		98197E742A2921CA009BA7FF /* db.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; path = db.sqlite; sourceTree = "<group>"; };
+		98197E772A292225009BA7FF /* AppDatabase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDatabase.swift; sourceTree = "<group>"; };
+		98197E792A292500009BA7FF /* AddSubjectView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddSubjectView.swift; sourceTree = "<group>"; };
 		98E3428B2A29156800B451EE /* AverageCalulator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AverageCalulator.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		98E3428E2A29156800B451EE /* AverageCalulatorApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AverageCalulatorApp.swift; sourceTree = "<group>"; };
 		98E342902A29156800B451EE /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		98E342922A29156C00B451EE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		98E342952A29156C00B451EE /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		98E3429D2A29162F00B451EE /* db.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; path = db.sqlite; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -41,14 +49,25 @@
 		98197E6D2A291B18009BA7FF /* views */ = {
 			isa = PBXGroup;
 			children = (
-				98197E6E2A291B39009BA7FF /* SubjectListView.swift */,
 			);
 			path = views;
+			sourceTree = "<group>";
+		};
+		98197E762A2921FB009BA7FF /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				98197E772A292225009BA7FF /* AppDatabase.swift */,
+				98197E6E2A291B39009BA7FF /* SubjectListView.swift */,
+				98197E702A291BB4009BA7FF /* SubjectItemView.swift */,
+				98197E792A292500009BA7FF /* AddSubjectView.swift */,
+			);
+			path = Helpers;
 			sourceTree = "<group>";
 		};
 		98E342822A29156800B451EE = {
 			isa = PBXGroup;
 			children = (
+				98197E762A2921FB009BA7FF /* Helpers */,
 				98E3428D2A29156800B451EE /* AverageCalulator */,
 				98E3428C2A29156800B451EE /* Products */,
 			);
@@ -86,7 +105,8 @@
 		98E3429C2A29160100B451EE /* models */ = {
 			isa = PBXGroup;
 			children = (
-				98E3429D2A29162F00B451EE /* db.sqlite */,
+				98197E742A2921CA009BA7FF /* db.sqlite */,
+				98197E722A291D1E009BA7FF /* Subject.swift */,
 			);
 			path = models;
 			sourceTree = "<group>";
@@ -156,7 +176,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				98E342962A29156C00B451EE /* Preview Assets.xcassets in Resources */,
-				98E3429E2A29162F00B451EE /* db.sqlite in Resources */,
+				98197E752A2921CA009BA7FF /* db.sqlite in Resources */,
 				98E342932A29156C00B451EE /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -168,8 +188,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				98197E782A292225009BA7FF /* AppDatabase.swift in Sources */,
 				98E342912A29156800B451EE /* ContentView.swift in Sources */,
+				98197E732A291D1E009BA7FF /* Subject.swift in Sources */,
 				98197E6F2A291B39009BA7FF /* SubjectListView.swift in Sources */,
+				98197E712A291BB4009BA7FF /* SubjectItemView.swift in Sources */,
+				98197E7A2A292500009BA7FF /* AddSubjectView.swift in Sources */,
 				98E3428F2A29156800B451EE /* AverageCalulatorApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
