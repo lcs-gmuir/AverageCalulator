@@ -7,18 +7,23 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		98197E6C2A291A13009BA7FF /* Blackbird in Frameworks */ = {isa = PBXBuildFile; productRef = 98197E6B2A291A13009BA7FF /* Blackbird */; };
+		98197E6F2A291B39009BA7FF /* SubjectListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98197E6E2A291B39009BA7FF /* SubjectListView.swift */; };
 		98E3428F2A29156800B451EE /* AverageCalulatorApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98E3428E2A29156800B451EE /* AverageCalulatorApp.swift */; };
 		98E342912A29156800B451EE /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98E342902A29156800B451EE /* ContentView.swift */; };
 		98E342932A29156C00B451EE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 98E342922A29156C00B451EE /* Assets.xcassets */; };
 		98E342962A29156C00B451EE /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 98E342952A29156C00B451EE /* Preview Assets.xcassets */; };
+		98E3429E2A29162F00B451EE /* db.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = 98E3429D2A29162F00B451EE /* db.sqlite */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		98197E6E2A291B39009BA7FF /* SubjectListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubjectListView.swift; sourceTree = "<group>"; };
 		98E3428B2A29156800B451EE /* AverageCalulator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AverageCalulator.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		98E3428E2A29156800B451EE /* AverageCalulatorApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AverageCalulatorApp.swift; sourceTree = "<group>"; };
 		98E342902A29156800B451EE /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		98E342922A29156C00B451EE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		98E342952A29156C00B451EE /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		98E3429D2A29162F00B451EE /* db.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; path = db.sqlite; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -26,12 +31,21 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				98197E6C2A291A13009BA7FF /* Blackbird in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		98197E6D2A291B18009BA7FF /* views */ = {
+			isa = PBXGroup;
+			children = (
+				98197E6E2A291B39009BA7FF /* SubjectListView.swift */,
+			);
+			path = views;
+			sourceTree = "<group>";
+		};
 		98E342822A29156800B451EE = {
 			isa = PBXGroup;
 			children = (
@@ -53,6 +67,8 @@
 			children = (
 				98E3428E2A29156800B451EE /* AverageCalulatorApp.swift */,
 				98E342902A29156800B451EE /* ContentView.swift */,
+				98197E6D2A291B18009BA7FF /* views */,
+				98E3429C2A29160100B451EE /* models */,
 				98E342922A29156C00B451EE /* Assets.xcassets */,
 				98E342942A29156C00B451EE /* Preview Content */,
 			);
@@ -65,6 +81,14 @@
 				98E342952A29156C00B451EE /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		98E3429C2A29160100B451EE /* models */ = {
+			isa = PBXGroup;
+			children = (
+				98E3429D2A29162F00B451EE /* db.sqlite */,
+			);
+			path = models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -83,6 +107,9 @@
 			dependencies = (
 			);
 			name = AverageCalulator;
+			packageProductDependencies = (
+				98197E6B2A291A13009BA7FF /* Blackbird */,
+			);
 			productName = AverageCalulator;
 			productReference = 98E3428B2A29156800B451EE /* AverageCalulator.app */;
 			productType = "com.apple.product-type.application";
@@ -111,6 +138,9 @@
 				Base,
 			);
 			mainGroup = 98E342822A29156800B451EE;
+			packageReferences = (
+				98197E6A2A291A13009BA7FF /* XCRemoteSwiftPackageReference "Blackbird" */,
+			);
 			productRefGroup = 98E3428C2A29156800B451EE /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -126,6 +156,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				98E342962A29156C00B451EE /* Preview Assets.xcassets in Resources */,
+				98E3429E2A29162F00B451EE /* db.sqlite in Resources */,
 				98E342932A29156C00B451EE /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -138,6 +169,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				98E342912A29156800B451EE /* ContentView.swift in Sources */,
+				98197E6F2A291B39009BA7FF /* SubjectListView.swift in Sources */,
 				98E3428F2A29156800B451EE /* AverageCalulatorApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -275,6 +307,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -304,6 +337,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -339,6 +373,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		98197E6A2A291A13009BA7FF /* XCRemoteSwiftPackageReference "Blackbird" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/marcoarment/Blackbird";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		98197E6B2A291A13009BA7FF /* Blackbird */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 98197E6A2A291A13009BA7FF /* XCRemoteSwiftPackageReference "Blackbird" */;
+			productName = Blackbird;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 98E342832A29156800B451EE /* Project object */;
 }
