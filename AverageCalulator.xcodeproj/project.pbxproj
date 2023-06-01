@@ -46,20 +46,20 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		98197E6D2A291B18009BA7FF /* views */ = {
+		98197E6D2A291B18009BA7FF /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				98197E6E2A291B39009BA7FF /* SubjectListView.swift */,
+				98197E702A291BB4009BA7FF /* SubjectItemView.swift */,
+				98197E792A292500009BA7FF /* AddSubjectView.swift */,
 			);
-			path = views;
+			path = Views;
 			sourceTree = "<group>";
 		};
 		98197E762A2921FB009BA7FF /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
 				98197E772A292225009BA7FF /* AppDatabase.swift */,
-				98197E6E2A291B39009BA7FF /* SubjectListView.swift */,
-				98197E702A291BB4009BA7FF /* SubjectItemView.swift */,
-				98197E792A292500009BA7FF /* AddSubjectView.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -86,7 +86,7 @@
 			children = (
 				98E3428E2A29156800B451EE /* AverageCalulatorApp.swift */,
 				98E342902A29156800B451EE /* ContentView.swift */,
-				98197E6D2A291B18009BA7FF /* views */,
+				98197E6D2A291B18009BA7FF /* Views */,
 				98E3429C2A29160100B451EE /* models */,
 				98E342922A29156C00B451EE /* Assets.xcassets */,
 				98E342942A29156C00B451EE /* Preview Content */,
