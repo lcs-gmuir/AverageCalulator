@@ -52,6 +52,7 @@
 				98197E6E2A291B39009BA7FF /* SubjectListView.swift */,
 				98197E702A291BB4009BA7FF /* SubjectItemView.swift */,
 				98197E792A292500009BA7FF /* AddSubjectView.swift */,
+				98197E762A2921FB009BA7FF /* Helpers */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -67,7 +68,6 @@
 		98E342822A29156800B451EE = {
 			isa = PBXGroup;
 			children = (
-				98197E762A2921FB009BA7FF /* Helpers */,
 				98E3428D2A29156800B451EE /* AverageCalulator */,
 				98E3428C2A29156800B451EE /* Products */,
 			);
