@@ -36,6 +36,7 @@ struct SubjectListView: View {
                     })
                     .sheet(isPresented: $showingAddSubjectView) {
                         AddSubjectView()
+                            .presentationDetents([.fraction(0.15)])
                             
                     }
                     

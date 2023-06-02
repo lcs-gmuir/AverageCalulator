@@ -14,33 +14,48 @@ struct AddSubjectView: View {
     
     var body: some View {
         NavigationView{
-            ZStack{
-                HStack{
-                    
-                    TextField("Enter Subject", text: $subject)
-                        .textFieldStyle(.roundedBorder)
-                    
-                    Button(action: {
-                        Task{
-                            try await db!.transaction { core in
-                                try core.query("INSERT INTO Subject (subject) VALUES (?)", subject)
-                                
-                            }
-                            subject = ""
-                        }
-                    }, label:{
-                        Text("ADD")
-                            .font(.caption)
+            VStack{
+                ZStack{
+                    HStack{
                         
-                    })
-                    .padding()
-                    
-                    
+                        TextField("Enter Subject", text: $subject)
+                            .textFieldStyle(.roundedBorder)
+                        
+                            .toolbar {
+                                ToolbarItem(placement: .primaryAction) {
+                                    Button(action: {
+                                        Task{
+                                            try await db!.transaction { core in
+                                                try core.query("INSERT INTO Subject (subject) VALUES (?)", subject)
+                                                
+                                            }
+                                            subject = ""
+                                        }
+                                    }, label:{
+                                        Image(systemName: "plus")
+                                            .font(.caption)
+                                        
+                                    })
+                                }
+                            }
+                       
+                        
+                        
+                    }
                     
                 }
+                Spacer()
+                
             }
+            .padding(5)
+            
+            
+           
         }
+        
+       
     }
+    
     
     
     
