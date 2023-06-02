@@ -11,19 +11,12 @@ import SwiftUI
 struct AverageCalulatorApp: App {
     var body: some Scene {
         WindowGroup {
-            TabView{
-                AddSubjectView()
-                    .tabItem{
-                        Label("Advice", systemImage: "square.and.pencil.circle.fill")
-                        
-                    }
+            
+              
                 SubjectListView()
-                    .tabItem{
-                        Label("Saved", systemImage: "square.and.arrow.down")
-                        
-                    }
+                  
                 
-            }
+            
          
             .environment(\.blackbirdDatabase, AppDatabase.instance)       }
     }

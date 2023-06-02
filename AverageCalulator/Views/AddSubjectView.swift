@@ -14,26 +14,30 @@ struct AddSubjectView: View {
     
     var body: some View {
         NavigationView{
-            HStack{
-                TextField("Enter a to-do item", text: $subject)
-                    .padding()
-                Button(action: {
-                    Task{
-                        try await db!.transaction { core in
-                            try core.query("INSERT INTO Subject (subject) VALUES (?)", subject)
-                            
-                        }
-                        subject = ""
-                    }
-                }, label:{
-                    Text("ADD")
-                        .font(.caption)
+            ZStack{
+                HStack{
                     
-                })
-                .padding()
-                
-                
-                
+                    TextField("Enter Subject", text: $subject)
+                        .textFieldStyle(.roundedBorder)
+                    
+                    Button(action: {
+                        Task{
+                            try await db!.transaction { core in
+                                try core.query("INSERT INTO Subject (subject) VALUES (?)", subject)
+                                
+                            }
+                            subject = ""
+                        }
+                    }, label:{
+                        Text("ADD")
+                            .font(.caption)
+                        
+                    })
+                    .padding()
+                    
+                    
+                    
+                }
             }
         }
     }
