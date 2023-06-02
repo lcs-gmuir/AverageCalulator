@@ -14,42 +14,36 @@ struct AddSubjectView: View {
     
     var body: some View {
         NavigationView{
-            VStack{
-                TextField("Enter the subject name", text: $subject)
-                    .textFieldStyle(.roundedBorder)
-                Spacer()
-            }
-            .toolbar {
-                ToolbarItem(placement: .primaryAction) {
-                    Button(action: {
-                        // Write to database
-                        Task {
-                            try await db!.transaction { core in
-                                try core.query("INSERT INTO Subject (subject) VALUES (?)"
-                                )
-                            }
-                            // Reset input fields after writing to database
-                            subject = ""
+            HStack{
+                TextField("Enter a to-do item", text: $subject)
+                    .padding()
+                Button(action: {
+                    Task{
+                        try await db!.transaction { core in
+                            try core.query("INSERT INTO Subject (subject) VALUES (?)", subject)
                             
                         }
-                    }, label: {
-                        Text("Add")
-                    })
-                }
+                        subject = ""
+                    }
+                }, label:{
+                    Text("ADD")
+                        .font(.caption)
+                    
+                })
+                .padding()
+                
+                
+                
             }
-            
-            
-            
-            
         }
     }
-}
-
-
-
-struct AddSubjectView_Previews: PreviewProvider {
-    static var previews: some View {
-        AddSubjectView()
-            .environment(\.blackbirdDatabase, AppDatabase.instance)
+    
+    
+    
+    struct AddSubjectView_Previews: PreviewProvider {
+        static var previews: some View {
+            AddSubjectView()
+                .environment(\.blackbirdDatabase, AppDatabase.instance)
+        }
     }
 }
