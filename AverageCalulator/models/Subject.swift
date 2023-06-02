@@ -6,6 +6,7 @@
 //
 import Blackbird
 import Foundation
+
 struct Subject: BlackbirdModel{
     @BlackbirdColumn var id: Int
     @BlackbirdColumn var subject: String
