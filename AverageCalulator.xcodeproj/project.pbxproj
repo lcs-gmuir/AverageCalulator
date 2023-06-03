@@ -14,7 +14,10 @@
 		98197E752A2921CA009BA7FF /* db.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = 98197E742A2921CA009BA7FF /* db.sqlite */; };
 		98197E782A292225009BA7FF /* AppDatabase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98197E772A292225009BA7FF /* AppDatabase.swift */; };
 		98197E7A2A292500009BA7FF /* AddSubjectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98197E792A292500009BA7FF /* AddSubjectView.swift */; };
-		98E3428F2A29156800B451EE /* AverageCalulatorApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98E3428E2A29156800B451EE /* AverageCalulatorApp.swift */; };
+		98757FDD2A2A71760018048B /* Test.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98757FDC2A2A71760018048B /* Test.swift */; };
+		98757FDF2A2A74190018048B /* AddTestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98757FDE2A2A74190018048B /* AddTestView.swift */; };
+		98757FE12A2A797D0018048B /* TestItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98757FE02A2A797D0018048B /* TestItemView.swift */; };
+		98E3428F2A29156800B451EE /* AddSubjectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98E3428E2A29156800B451EE /* AddSubjectView.swift */; };
 		98E342912A29156800B451EE /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98E342902A29156800B451EE /* ContentView.swift */; };
 		98E342932A29156C00B451EE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 98E342922A29156C00B451EE /* Assets.xcassets */; };
 		98E342962A29156C00B451EE /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 98E342952A29156C00B451EE /* Preview Assets.xcassets */; };
@@ -27,8 +30,11 @@
 		98197E742A2921CA009BA7FF /* db.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; path = db.sqlite; sourceTree = "<group>"; };
 		98197E772A292225009BA7FF /* AppDatabase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDatabase.swift; sourceTree = "<group>"; };
 		98197E792A292500009BA7FF /* AddSubjectView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddSubjectView.swift; sourceTree = "<group>"; };
+		98757FDC2A2A71760018048B /* Test.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Test.swift; sourceTree = "<group>"; };
+		98757FDE2A2A74190018048B /* AddTestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTestView.swift; sourceTree = "<group>"; };
+		98757FE02A2A797D0018048B /* TestItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestItemView.swift; sourceTree = "<group>"; };
 		98E3428B2A29156800B451EE /* AverageCalulator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AverageCalulator.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		98E3428E2A29156800B451EE /* AverageCalulatorApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AverageCalulatorApp.swift; sourceTree = "<group>"; };
+		98E3428E2A29156800B451EE /* AddSubjectView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddSubjectView.swift; sourceTree = "<group>"; };
 		98E342902A29156800B451EE /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		98E342922A29156C00B451EE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		98E342952A29156C00B451EE /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
@@ -49,9 +55,8 @@
 		98197E6D2A291B18009BA7FF /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				98197E6E2A291B39009BA7FF /* SubjectListView.swift */,
-				98197E702A291BB4009BA7FF /* SubjectItemView.swift */,
-				98197E792A292500009BA7FF /* AddSubjectView.swift */,
+				98757FDB2A2A711C0018048B /* Test */,
+				98757FDA2A2A70DA0018048B /* Subject */,
 				98197E762A2921FB009BA7FF /* Helpers */,
 			);
 			path = Views;
@@ -63,6 +68,25 @@
 				98197E772A292225009BA7FF /* AppDatabase.swift */,
 			);
 			path = Helpers;
+			sourceTree = "<group>";
+		};
+		98757FDA2A2A70DA0018048B /* Subject */ = {
+			isa = PBXGroup;
+			children = (
+				98197E792A292500009BA7FF /* AddSubjectView.swift */,
+				98197E702A291BB4009BA7FF /* SubjectItemView.swift */,
+				98197E6E2A291B39009BA7FF /* SubjectListView.swift */,
+			);
+			path = Subject;
+			sourceTree = "<group>";
+		};
+		98757FDB2A2A711C0018048B /* Test */ = {
+			isa = PBXGroup;
+			children = (
+				98757FDE2A2A74190018048B /* AddTestView.swift */,
+				98757FE02A2A797D0018048B /* TestItemView.swift */,
+			);
+			path = Test;
 			sourceTree = "<group>";
 		};
 		98E342822A29156800B451EE = {
@@ -84,10 +108,10 @@
 		98E3428D2A29156800B451EE /* AverageCalulator */ = {
 			isa = PBXGroup;
 			children = (
-				98E3428E2A29156800B451EE /* AverageCalulatorApp.swift */,
+				98E3428E2A29156800B451EE /* AddSubjectView.swift */,
 				98E342902A29156800B451EE /* ContentView.swift */,
 				98197E6D2A291B18009BA7FF /* Views */,
-				98E3429C2A29160100B451EE /* models */,
+				98E3429C2A29160100B451EE /* Model */,
 				98E342922A29156C00B451EE /* Assets.xcassets */,
 				98E342942A29156C00B451EE /* Preview Content */,
 			);
@@ -102,13 +126,14 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
-		98E3429C2A29160100B451EE /* models */ = {
+		98E3429C2A29160100B451EE /* Model */ = {
 			isa = PBXGroup;
 			children = (
 				98197E742A2921CA009BA7FF /* db.sqlite */,
 				98197E722A291D1E009BA7FF /* Subject.swift */,
+				98757FDC2A2A71760018048B /* Test.swift */,
 			);
-			path = models;
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -193,8 +218,11 @@
 				98197E732A291D1E009BA7FF /* Subject.swift in Sources */,
 				98197E6F2A291B39009BA7FF /* SubjectListView.swift in Sources */,
 				98197E712A291BB4009BA7FF /* SubjectItemView.swift in Sources */,
+				98757FDF2A2A74190018048B /* AddTestView.swift in Sources */,
 				98197E7A2A292500009BA7FF /* AddSubjectView.swift in Sources */,
-				98E3428F2A29156800B451EE /* AverageCalulatorApp.swift in Sources */,
+				98757FDD2A2A71760018048B /* Test.swift in Sources */,
+				98E3428F2A29156800B451EE /* AddSubjectView.swift in Sources */,
+				98757FE12A2A797D0018048B /* TestItemView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

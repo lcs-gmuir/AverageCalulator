@@ -13,11 +13,12 @@ struct AverageCalulatorApp: App {
         WindowGroup {
             
               
-                SubjectListView()
-                  
+            SubjectListView()
+                
                 
             
          
             .environment(\.blackbirdDatabase, AppDatabase.instance)       }
     }
 }
+                                                                                                       
