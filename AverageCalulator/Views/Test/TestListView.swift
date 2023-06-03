@@ -38,7 +38,7 @@ struct TestListView: View {
                     })
                     .sheet(isPresented: $showingAddTestView) {
                         AddTestView()
-                            .presentationDetents([.fraction(0.15)])
+                            .presentationDetents([.fraction(0.3)])
                             
                     }
                     
