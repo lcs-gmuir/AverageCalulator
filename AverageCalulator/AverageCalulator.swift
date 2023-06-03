@@ -12,16 +12,13 @@ struct AverageCalulatorApp: App {
     var body: some Scene {
         WindowGroup {
             TabView {
-                Text("Tab 1")
-                    .tabItem {   SubjectListView()
-                        Label("Tab 1", systemImage: "1.circle")
+            TestListView()
+                    .tabItem {
+                        Image(systemName: "plus.circle")
+                        Text("Add")
                     }
                 
-                Text("Tab 2")
-                    .tabItem { AddTestView()
-                        Label("Tab 2", systemImage: "2.circle")
-                    }
-                
+                  
             }
             
               
