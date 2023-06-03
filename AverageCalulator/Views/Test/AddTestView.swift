@@ -11,8 +11,8 @@ struct AddTestView: View {
     
     @Environment(\.blackbirdDatabase) var db: Blackbird.Database?
     @State var name = ""
-    @State var score = ""
-    @State var outof = ""
+    @State var score = 1
+    @State var outof = 1
     var body: some View {
         NavigationView{
             VStack(spacing: 20)  {
@@ -20,15 +20,21 @@ struct AddTestView: View {
                 TextField("Enter Discription", text: $name)
                     .textFieldStyle(.roundedBorder)
                 
-                TextField("Score On The Test ", text: $score)
-                    .keyboardType(.numberPad)
-                    .textContentType(.oneTimeCode)
-                    .textFieldStyle(.roundedBorder)
+                Picker("Select a number", selection: $score) {
+                            ForEach(1...100, id: \.self) {
+                                Text("\($0)")
+                            }
+                        }
+                        .pickerStyle(WheelPickerStyle())
+                        .labelsHidden()
                 
-                TextField("What the Test was out of", text: $outof)
-                    .keyboardType(.numberPad)
-                    .textContentType(.oneTimeCode)
-                    .textFieldStyle(.roundedBorder)
+                Picker("Select a number", selection: $outof) {
+                            ForEach(1...100, id: \.self) {
+                                Text("\($0)")
+                            }
+                        }
+                        .pickerStyle(WheelPickerStyle())
+                        .labelsHidden()
             }
             .toolbar {
                 ToolbarItem(placement: .primaryAction) {
@@ -54,8 +60,8 @@ struct AddTestView: View {
                             }
                             // Reset input fields after writing to database
                             name = ""
-                            score = ""
-                            outof = ""
+                            score = 1
+                            outof = 1
                         }
                     }, label: {
                         Text("Add")
