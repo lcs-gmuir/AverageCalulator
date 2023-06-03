@@ -21,20 +21,20 @@ struct AddTestView: View {
                     .textFieldStyle(.roundedBorder)
                 
                 Picker("Select a number", selection: $score) {
-                            ForEach(1...100, id: \.self) {
-                                Text("\($0)")
-                            }
-                        }
-                        .pickerStyle(WheelPickerStyle())
-                        .labelsHidden()
+                    ForEach(1...100, id: \.self) {
+                        Text("\($0)")
+                    }
+                }
+                .pickerStyle(WheelPickerStyle())
+                .labelsHidden()
                 
                 Picker("Select a number", selection: $outof) {
-                            ForEach(1...100, id: \.self) {
-                                Text("\($0)")
-                            }
-                        }
-                        .pickerStyle(WheelPickerStyle())
-                        .labelsHidden()
+                    ForEach(1...100, id: \.self) {
+                        Text("\($0)")
+                    }
+                }
+                .pickerStyle(WheelPickerStyle())
+                .labelsHidden()
             }
             .toolbar {
                 ToolbarItem(placement: .primaryAction) {
@@ -43,7 +43,7 @@ struct AddTestView: View {
                         Task {
                             try await db!.transaction { core in
                                 try core.query("""
-                                        INSERT INTO movie (
+                                        INSERT INTO Test (
                                             name,
                                             score,
                                             outof
