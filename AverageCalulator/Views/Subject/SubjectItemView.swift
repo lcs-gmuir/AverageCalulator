@@ -11,9 +11,12 @@ struct SubjectItemView: View {
     let subject: String
     
     var body: some View {
-        Text(subject)
-            .font(.title3)
-            .bold()
+        HStack {
+            Text(subject)
+                .font(.title)
+                .bold()
+            Text("avg")
+        }
         }
     }
 
