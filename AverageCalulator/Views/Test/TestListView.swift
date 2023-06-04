@@ -28,22 +28,7 @@ struct TestListView: View {
             
             .navigationTitle("Tests")
             
-            .toolbar {
-                ToolbarItem(placement: .primaryAction) {
-                    Button(action: {
-                        showingAddTestView = true
-                    }, label: {
-                        Text("New Test")
-                            .font(.title2)
-                    })
-                    .sheet(isPresented: $showingAddTestView) {
-                        AddTestView()
-                            .presentationDetents([.fraction(0.4)])
-                            
-                    }
-                    
-                }
-            }
+      
         }
         
     }

@@ -19,7 +19,9 @@ struct TestItemView: View {
                 .bold()
             
 //            Text("\(score)")
-            Text("\(score)\\\(outof)")
+            Text("\(score)")
+            Text("/")
+            Text("\(outof)")
 
         }
     }
