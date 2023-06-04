@@ -11,63 +11,71 @@ struct AddTestView: View {
     
     @Environment(\.blackbirdDatabase) var db: Blackbird.Database?
     @State var name = ""
-    @State var score = 1
-    @State var outof = 1
+    @State var score = ""
+    @State var outof = ""
     var body: some View {
         NavigationView{
-            VStack(spacing: 20)  {
+            VStack(spacing: 30)  {
                 
-                TextField("Enter Discription", text: $name)
-                    .textFieldStyle(.roundedBorder)
+                TextField("Enter Test Name", text: $name)
+                    .textFieldStyle(RoundedBorderTextFieldStyle())
+                    .frame(height: 30)
+                    .padding(5)
+                    .background(Color.blue)
                 
-                Picker("Select a number", selection: $score) {
-                    ForEach(1...100, id: \.self) {
-                        Text("\($0)")
-                    }
-                }
-                .pickerStyle(WheelPickerStyle())
-                .labelsHidden()
+                TextField("Enter Your test score", text: $score)
+                    .textFieldStyle(RoundedBorderTextFieldStyle())
+                    .keyboardType(.numberPad)
+                    .textContentType(.oneTimeCode)
+                    .frame(height: 30)
+                    .padding(5)
+                    .background(Color.blue)
                 
-                Picker("Select a number", selection: $outof) {
-                    ForEach(1...100, id: \.self) {
-                        Text("\($0)")
-                    }
-                }
-                .pickerStyle(WheelPickerStyle())
-                .labelsHidden()
-            }
-            .toolbar {
-                ToolbarItem(placement: .primaryAction) {
-                    Button(action: {
-                        // Write to database
-                        Task {
-                            try await db!.transaction { core in
-                                try core.query("""
-                                        INSERT INTO Test (
-                                            name,
-                                            score,
-                                            outof
-                                        )
-                                        VALUES (
-                                            (?),
-                                            (?),
-                                            (?)
-                                        )
-                                        """,
-                                               name,
-                                               score,
-                                               outof)
-                            }
-                            // Reset input fields after writing to database
-                            name = ""
-                            score = 1
-                            outof = 1
+                
+                
+                TextField("Enter what The test Was Out of", text: $outof)
+                    .textFieldStyle(RoundedBorderTextFieldStyle())
+                    .keyboardType(.numberPad)
+                    .frame(height: 30)
+                    .padding(5)
+                    .background(Color.blue)
+                            
+                
+                Button(action: {
+                    // Write to database
+                    Task {
+                        try await db!.transaction { core in
+                            try core.query("""
+                                    INSERT INTO Test (
+                                        name,
+                                        score,
+                                        outof
+                                    )
+                                    VALUES (
+                                        (?),
+                                        (?),
+                                        (?)
+                                    )
+                                    """,
+                                           name,
+                                           score,
+                                           outof)
                         }
-                    }, label: {
-                        Text("Add")
-                    })
-                }
+                        // Reset input fields after writing to database
+                        name = ""
+                        score = ""
+                        outof = ""
+                    }
+                }, label: {
+                    Text("Add")
+                        .font(.title)
+                })
             }
+            
+            
+            
+            
+            
         }
     }
 }
