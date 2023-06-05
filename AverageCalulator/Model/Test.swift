@@ -8,10 +8,11 @@ import Blackbird
 import Foundation
 
 struct Test: BlackbirdModel{
-    @BlackbirdColumn var name: String
+    @BlackbirdColumn var Name: String
     @BlackbirdColumn var score: Int
     @BlackbirdColumn var outof: Int
     @BlackbirdColumn var id: Int
-    @BlackbirdColumn var subject_id: Int
+    @BlackbirdColumn var Subject_id: Int
+    @BlackbirdColumn var subject: String
 }
 

@@ -26,7 +26,7 @@ struct AddSubjectView: View {
                                     Button(action: {
                                         Task{
                                             try await db!.transaction { core in
-                                                try core.query("INSERT INTO Subject (subject) VALUES (?)", name)
+                                                try core.query("INSERT INTO Subject (name) VALUES (?)", name)
                                                 
                                             }
                                             name = ""

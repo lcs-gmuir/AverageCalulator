@@ -8,14 +8,15 @@ import Blackbird
 import SwiftUI
 
 struct TestItemView: View {
-    let name: String
+    let Name: String
     let score: Int
     let outof: Int
+    let subject: String
  
     
     var body: some View {
         HStack {
-            Text(name)
+            Text(Name)
                 .font(.title3)
                 .bold()
             
@@ -23,6 +24,7 @@ struct TestItemView: View {
             Text("\(score)")
             Text("/")
             Text("\(outof)")
+            Text(subject)
            
 
         }

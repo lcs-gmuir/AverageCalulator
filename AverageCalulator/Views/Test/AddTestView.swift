@@ -10,14 +10,14 @@ import SwiftUI
 struct AddTestView: View {
     
     @Environment(\.blackbirdDatabase) var db: Blackbird.Database?
-    @State var name = ""
+    @State var Name = ""
     @State var score = ""
     @State var outof = ""
     var body: some View {
         NavigationView{
             VStack(spacing: 30)  {
                 
-                TextField("Enter Test Name", text: $name)
+                TextField("Enter Test Name", text: $Name)
                     .textFieldStyle(RoundedBorderTextFieldStyle())
                     .frame(height: 30)
                     .padding(5)
@@ -47,7 +47,7 @@ struct AddTestView: View {
                         try await db!.transaction { core in
                             try core.query("""
                                     INSERT INTO Test (
-                                        name,
+                                        Name,
                                         score,
                                         outof
                                     )
@@ -57,12 +57,12 @@ struct AddTestView: View {
                                         (?)
                                     )
                                     """,
-                                           name,
+                                           Name,
                                            score,
                                            outof)
                         }
                         // Reset input fields after writing to database
-                        name = ""
+                        Name = ""
                         score = ""
                         outof = ""
                     }

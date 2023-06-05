@@ -10,8 +10,8 @@ import SwiftUI
 struct TestListView: View {
     
     @BlackbirdLiveQuery(tableName:"Test", { db in
-        try await db.query("SECLECT * FROM MoviesWithTestNames")
-        }) var tests
+        try await db.query("SELECT * FROM TestsWithSubjectNames")
+    }) var tests
     
     @State var showingAddTestView = false
     
@@ -19,25 +19,25 @@ struct TestListView: View {
         
         NavigationView {
             
-           
+            
             List(tests.results, id: \.self) { currentTest in
                 
-                if let name = currentTest["name"]?.stringValue,
+                if let Name = currentTest["Name"]?.stringValue,
                    let subject = currentTest["subject"]?.stringValue,
                    let score = currentTest["score"]?.intValue,
                    let outof = currentTest["outof"]?.intValue {
                     
-                    TestItemView(name: name,
-                                  subject: subject,
-                                  score: score,
-                                  outof: outof)
+                    TestItemView(Name: Name,
+                                 score: score,
+                                 outof: outof,
+                                 subject: subject)
                 }
                 
             }
             
             .navigationTitle("Tests")
             
-      
+            
         }
         
     }
