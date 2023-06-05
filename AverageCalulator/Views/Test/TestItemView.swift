@@ -33,7 +33,7 @@ struct TestItemView: View {
                     Text(subject)
                     Spacer()
                     
-                    //            Text("\(score)")
+               
                     Text("\(score)")
                     Text("/")
                     Text("\(outof)")
