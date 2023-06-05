@@ -11,6 +11,7 @@ struct TestItemView: View {
     let name: String
     let score: Int
     let outof: Int
+ 
     
     var body: some View {
         HStack {
@@ -22,6 +23,7 @@ struct TestItemView: View {
             Text("\(score)")
             Text("/")
             Text("\(outof)")
+           
 
         }
     }

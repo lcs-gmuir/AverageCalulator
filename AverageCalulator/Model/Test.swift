@@ -12,5 +12,6 @@ struct Test: BlackbirdModel{
     @BlackbirdColumn var score: Int
     @BlackbirdColumn var outof: Int
     @BlackbirdColumn var id: Int
+    @BlackbirdColumn var subject_id: Int
 }
 
