@@ -8,11 +8,11 @@ import Blackbird
 import SwiftUI
 
 struct SubjectItemView: View {
-    let subject: String
+    let name: String
     
     var body: some View {
         HStack {
-            Text(subject)
+            Text(name)
                 .font(.title)
                 .bold()
             Text("avg")
@@ -23,7 +23,7 @@ struct SubjectItemView: View {
 
 struct SubjectItemView_Previews: PreviewProvider {
     static var previews: some View {
-        SubjectItemView(subject: "math")
+        SubjectItemView(name: "math")
             .environment(\.blackbirdDatabase, AppDatabase.instance)
     }
 }

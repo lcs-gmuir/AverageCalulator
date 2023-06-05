@@ -19,9 +19,9 @@ struct SubjectListView: View {
         
         NavigationView {
             
-           
+            
             List(subjects.results) { currentSubject in
-                SubjectItemView(subject: currentSubject.subject)
+                SubjectItemView(name: currentSubject.name)
             }
             
             .navigationTitle("subjects")
@@ -37,7 +37,7 @@ struct SubjectListView: View {
                     .sheet(isPresented: $showingAddSubjectView) {
                         AddSubjectView()
                             .presentationDetents([.fraction(0.15)])
-                            
+                        
                     }
                     
                 }

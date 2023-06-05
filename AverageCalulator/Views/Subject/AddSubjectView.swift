@@ -10,7 +10,7 @@ import SwiftUI
 // Testing
 struct AddSubjectView: View {
     @Environment(\.blackbirdDatabase) var db: Blackbird.Database?
-    @State var subject = ""
+    @State var name = ""
     
     var body: some View {
         NavigationView{
@@ -18,7 +18,7 @@ struct AddSubjectView: View {
                 ZStack{
                     HStack{
                         
-                        TextField("Enter Subject", text: $subject)
+                        TextField("Enter Subject", text: $name)
                             .textFieldStyle(.roundedBorder)
                         
                             .toolbar {
@@ -26,10 +26,10 @@ struct AddSubjectView: View {
                                     Button(action: {
                                         Task{
                                             try await db!.transaction { core in
-                                                try core.query("INSERT INTO Subject (subject) VALUES (?)", subject)
+                                                try core.query("INSERT INTO Subject (subject) VALUES (?)", name)
                                                 
                                             }
-                                            subject = ""
+                                            name = ""
                                         }
                                     }, label:{
                                         Image(systemName: "plus")
