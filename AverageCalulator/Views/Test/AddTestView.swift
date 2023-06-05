@@ -13,6 +13,7 @@ struct AddTestView: View {
     @State var Name = ""
     @State var score = ""
     @State var outof = ""
+    @State var subject_id = 1
     var body: some View {
         NavigationView{
             VStack(spacing: 30)  {
@@ -39,6 +40,15 @@ struct AddTestView: View {
                     .frame(height: 30)
                     .padding(5)
                     .background(Color.blue)
+                
+                Picker(selection: $subject_id,
+                       label: Text("select subject "),
+                       content: {
+                    Text("math").tag(1)
+                    Text("english").tag(2)
+                })
+          
+                
                             
                 
                 Button(action: {
@@ -49,9 +59,12 @@ struct AddTestView: View {
                                     INSERT INTO Test (
                                         Name,
                                         score,
-                                        outof
+                                        outof,
+                                    subject_id
+                                    
                                     )
                                     VALUES (
+                                        (?),
                                         (?),
                                         (?),
                                         (?)
@@ -59,12 +72,14 @@ struct AddTestView: View {
                                     """,
                                            Name,
                                            score,
-                                           outof)
+                                           outof,
+                                       subject_id)
                         }
                         // Reset input fields after writing to database
                         Name = ""
                         score = ""
                         outof = ""
+                        subject_id = 1
                     }
                 }, label: {
                     Text("Add")

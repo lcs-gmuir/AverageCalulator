@@ -14,30 +14,35 @@ struct AverageCalulatorApp: App {
             TabView {
                 
                 AddTestView()
-                        .tabItem {
-                            Image(systemName: "plus.circle")
-                            Text("Add")
-                        }
-            TestListView()
+                    .tabItem {
+                        Image(systemName: "plus")
+                        Text("Add Test")
+                    }
+
+                TestListView()
                     .tabItem {
                         Image(systemName: "plus.circle")
-                        Text("Add")
+                        Text("Recent Tests")
                     }
+
                 SubjectListView()
-                        .tabItem {
-                            Image(systemName: "plus.circle")
-                            Text("Add")
-                        }
-                  
+                    .tabItem {
+                        Image(systemName: "person")
+                        Text("Subjects")
+                    }
+                
             }
+            .environment(\.blackbirdDatabase, AppDatabase.instance)
+
+
             
-              
-         
-                
-                
             
-         
-            .environment(\.blackbirdDatabase, AppDatabase.instance)       }
+            
+            
+        }
+        
+        
     }
 }
-                                                                                                       
+
+

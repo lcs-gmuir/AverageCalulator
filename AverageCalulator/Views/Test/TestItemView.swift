@@ -16,15 +16,23 @@ struct TestItemView: View {
     
     var body: some View {
         HStack {
-            Text(Name)
-                .font(.title3)
-                .bold()
+            VStack{
+                Text(Name)
+                    .font(.title3)
+                    .bold()
+                    .padding()
+            
+                    Text(subject)
+                   
+                            
+            }
+            Spacer()
             
 //            Text("\(score)")
             Text("\(score)")
             Text("/")
             Text("\(outof)")
-            Text(subject)
+         
            
 
         }
