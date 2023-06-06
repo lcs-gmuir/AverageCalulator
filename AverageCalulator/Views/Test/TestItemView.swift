@@ -29,6 +29,10 @@ struct TestItemView: View {
         return doubleScore/doubleOutOf*100
     }
     
+    var percentageRounded: Int {
+        return Int(percentage)
+    }
+    
     var body: some View {
         
         ZStack{
@@ -39,9 +43,10 @@ struct TestItemView: View {
                         .bold()
                         .padding(10)
                     Spacer()
-                    Text("\(percentage)")
+                    Text("\(percentageRounded)%")
                         .font(.title3)
                         .bold()
+                  
                     
                     
                 }
