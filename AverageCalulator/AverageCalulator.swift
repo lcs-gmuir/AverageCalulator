@@ -13,11 +13,7 @@ struct AverageCalulatorApp: App {
         WindowGroup {
             TabView {
                 
-                AddTestView()
-                    .tabItem {
-                        Image(systemName: "plus")
-                        Text("Add Test")
-                    }
+             
 
                 TestListView()
                     .tabItem {

@@ -15,7 +15,7 @@ struct TestItemView: View {
  
     
     var body: some View {
-        
+        ZStack{
             VStack{
                 HStack{
                     Text(Name)
@@ -27,19 +27,27 @@ struct TestItemView: View {
                         .font(.title3)
                         .bold()
                     
-                
+                    
                 }
                 HStack{
                     Text(subject)
                     Spacer()
                     
-               
+                    
                     Text("\(score)")
                     Text("/")
                     Text("\(outof)")
                 }
-              
+                .foregroundColor(.gray)
+                
             }
+//            RoundedRectangle(cornerRadius: 10)
+//                                                .strokeBorder(Color.black, lineWidth: 2)
+//                                                .cornerRadius(10)
+//                                                .frame(width:300, height: 100
+//                                                )
+
+        }
          
          
            

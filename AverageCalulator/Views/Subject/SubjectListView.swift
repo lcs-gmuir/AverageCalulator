@@ -13,39 +13,48 @@ struct SubjectListView: View {
         try await Subject.read(from: db)
     }) var subjects
     
-    @State var showingAddSubjectView = false
-    
+
     var body: some View {
         
         NavigationView {
             
             
-            List(subjects.results) { currentSubject in
-                SubjectItemView(name: currentSubject.name)
-            }
+                List(subjects.results) { currentSubject in
+                    SubjectItemView(name: currentSubject.name)
+                }
             
             .navigationTitle("subjects")
             
             .toolbar {
                 ToolbarItem(placement: .primaryAction) {
-                    Button(action: {
-                        showingAddSubjectView = true
-                    }, label: {
-                        Text("New Subject")
-                            .font(.title2)
-                    })
-                    .sheet(isPresented: $showingAddSubjectView) {
-                        AddSubjectView()
-                            .presentationDetents([.fraction(0.15)])
-                        
-                    }
-                    
+                    optionPopUp()
+
                 }
             }
+
+            
+//            add subject button
+//            .toolbar {
+//                ToolbarItem(placement: .primaryAction) {
+//                    Button(action: {
+//                        showingAddSubjectView = true
+//                    }, label: {
+//                        Text("New Subject")
+//                            .font(.title2)
+//                    })
+//                    .sheet(isPresented: $showingAddSubjectView) {
+//                        AddSubjectView()
+//                            .presentationDetents([.fraction(0.15)])
+//
+//                    }
+//
+//                }
+//            }
         }
-        
     }
     
+   
+
 }
 
 

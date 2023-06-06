@@ -91,7 +91,9 @@ var body: some View {
                 Text("Add")
                     .font(.title)
             })
+            Spacer()
         }
+        Spacer()
         
         
         

@@ -47,7 +47,8 @@ struct AddSubjectView: View {
                 Spacer()
                 
             }
-            .padding(5)
+           
+            
             
             
            

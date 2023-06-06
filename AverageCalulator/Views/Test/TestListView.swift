@@ -13,7 +13,7 @@ struct TestListView: View {
         try await db.query("SELECT * FROM TestsWithSubjectNames")
     }) var tests
     
-    @State var showingAddTestView = false
+ 
     
     var body: some View {
         
@@ -35,13 +35,40 @@ struct TestListView: View {
                 
             }
             
-            .navigationTitle("Tests")
+            
+            .navigationTitle("Recent Tests")
+            
+            .toolbar {
+                ToolbarItem(placement: .primaryAction) {
+                    optionPopUp()
+
+                }
+            }
             
             
+            
+//            add test Button
+//                        .toolbar {
+//                            ToolbarItem(placement: .primaryAction) {
+//                                Button(action: {
+//                                    showingAddTestView = true
+//                                }, label: {
+//                                    Text("New Test")
+//                                        .font(.title2)
+//                                })
+//                                .sheet(isPresented: $showingAddTestView) {
+//                                    AddTestView()
+//                                        .presentationDetents([.fraction(0.47)])
+//
+//                                }
+//
+//                            }
+//                        }
         }
         
+        
     }
-    
+  
 }
 
 
