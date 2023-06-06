@@ -66,7 +66,7 @@ var body: some View {
                                         Name,
                                         score,
                                         outof,
-                                    subject_id
+                                    subject_id2
                                     
                                     )
                                     VALUES (

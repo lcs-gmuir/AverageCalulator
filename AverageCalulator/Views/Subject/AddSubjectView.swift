@@ -13,49 +13,56 @@ struct AddSubjectView: View {
     @State var name = ""
     
     var body: some View {
+        
         NavigationView{
-            VStack{
-                ZStack{
-                    HStack{
-                        
-                        TextField("Enter Subject", text: $name)
-                            .textFieldStyle(.roundedBorder)
-                        
-                            .toolbar {
-                                ToolbarItem(placement: .primaryAction) {
-                                    Button(action: {
-                                        Task{
-                                            try await db!.transaction { core in
-                                                try core.query("INSERT INTO Subject (name) VALUES (?)", name)
-                                                
-                                            }
-                                            name = ""
-                                        }
-                                    }, label:{
-                                        Image(systemName: "plus")
-                                            .font(.caption)
-                                        
-                                    })
-                                }
-                            }
-                       
-                        
+            
+            ZStack{
+                VStack{
+                    
+                    ZStack{
+                        HStack{
+                            
+                            TextField("Enter Subject", text: $name)
+                                .textFieldStyle(.roundedBorder)
+                                .frame(height: 30)
+                                .padding(5)
+                                .background(Color.blue)
+                            
+                            
+                            
+                            
+                            
+                        }
                         
                     }
                     
+                    Button(action: {
+                        Task{
+                            try await db!.transaction { core in
+                                try core.query("INSERT INTO Subject (name) VALUES (?)", name)
+                                
+                            }
+                            name = ""
+                        }
+                    }, label:{
+                        Text("ADD")
+                            .font(.title2)
+                        
+                    })
                 }
-                Spacer()
+                
+                
+                
+                
+                
                 
             }
-           
             
-            
-            
-           
         }
         
-       
+        
     }
+    
     
     
     
@@ -66,4 +73,5 @@ struct AddSubjectView: View {
                 .environment(\.blackbirdDatabase, AppDatabase.instance)
         }
     }
+    
 }

@@ -18,10 +18,18 @@ struct optionPopUp: View {
         
       
         Menu {
-            Button("New Test", action: placeOrder)
-            Button("New Subject", action: adjustOrder)
+            Button(action: placeOrder) {
+                 Text("New Test")
+                     .font(.title3) // Set the desired font size
+             }
+             Button(action: adjustOrder) {
+                 Text("New Subject")
+             }
         } label: {
             Label("Options", systemImage: "plus")
+                .font(.title) // Set the font size to .title or any other desired value
+                      .imageScale(.large) // Set the image scale to .large or any other desired value
+                      .bold()
         }
         .sheet(isPresented: $showingAddTestView) {
             AddTestView()
@@ -29,7 +37,7 @@ struct optionPopUp: View {
         }
         .sheet(isPresented: $showingAddSubjectView) {
             AddSubjectView()
-                .presentationDetents([.fraction(0.15)])
+                .presentationDetents([.fraction(0.8)])
     }
                 }
       

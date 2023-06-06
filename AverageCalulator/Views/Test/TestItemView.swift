@@ -12,9 +12,25 @@ struct TestItemView: View {
     let score: Int
     let outof: Int
     let subject: String
- 
+    
+    //    var percentage: String {
+    ////        return Double(7.9232421).formatted(.number.)
+    //    }
+    
+    var doubleScore: Double{
+        return Double(score)
+    }
+    
+    var doubleOutOf: Double{
+        return Double(outof)
+    }
+    
+    var percentage: Double {
+        return doubleScore/doubleOutOf*100
+    }
     
     var body: some View {
+        
         ZStack{
             VStack{
                 HStack{
@@ -23,7 +39,7 @@ struct TestItemView: View {
                         .bold()
                         .padding(10)
                     Spacer()
-                    Text("avg")
+                    Text("\(percentage)")
                         .font(.title3)
                         .bold()
                     
@@ -41,19 +57,19 @@ struct TestItemView: View {
                 .foregroundColor(.gray)
                 
             }
-//            RoundedRectangle(cornerRadius: 10)
-//                                                .strokeBorder(Color.black, lineWidth: 2)
-//                                                .cornerRadius(10)
-//                                                .frame(width:300, height: 100
-//                                                )
-
+            //            RoundedRectangle(cornerRadius: 10)
+            //                                                .strokeBorder(Color.black, lineWidth: 2)
+            //                                                .cornerRadius(10)
+            //                                                .frame(width:300, height: 100
+            //                                                )
+            
         }
-         
-         
-           
-
+        
+        
+        
+        
     }
 }
-                 
-                 
-                 
+
+
+
