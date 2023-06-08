@@ -9,9 +9,9 @@ import SwiftUI
 
 struct TestsGroupedBySubjectListView: View {
     
-    @BlackbirdLiveQuery(tableName:"Test", { db in
-        try await db.query("SELECT * FROM TestsWithSubjectNames")
-    }) var tests
+    @BlackbirdLiveQuery(tableName:"Tests", { db in
+        try await db.query("SELECT * FROM SubjectsWithStats")
+    }) var subjects
     
     
     
@@ -33,7 +33,20 @@ struct TestsGroupedBySubjectListView: View {
                     Text("group two")
                 })
                 
+                ForEach(subjects.results, id: \.self) { currentSubject in
+                    
+                    Section(content:{
+                        Text ("movies will go here")
+                    }, header: {
+                        
+                        if let subjectName = currentSubject["subject"]?.stringValue {
+                            Text(subjectName)
+                        }
+                    })
+                    
+                }
             }
+        
             .listStyle(.grouped)
             
             .navigationTitle("Recent Tests")
