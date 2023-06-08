@@ -25,12 +25,6 @@ struct SubjectListView: View {
             
             .navigationTitle("subjects")
             
-            .toolbar {
-                ToolbarItem(placement: .primaryAction) {
-                    optionPopUp()
-
-                }
-            }
 
             
 //            add subject button

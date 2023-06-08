@@ -11,56 +11,49 @@ struct TestListView: View {
     
     let subjectId: Int
     
-    @BlackbirdLiveQuery(tableName:"Test", { db in
-        try await db.query("SELECT * FROM TestsWithSubjectNames WHERE subject_id = \(subjectId)")
-    }) var tests
-    
- 
+    @BlackbirdLiveQuery var tests: Blackbird.LiveResults<Blackbird.Row>
     
     var body: some View {
         
-        NavigationView {
+        
+        
+        
+        
+        ForEach(tests.results, id: \.self) { currentTest in
             
-            
-            List(tests.results, id: \.self) { currentTest in
+            if let Name = currentTest["Name"]?.stringValue,
+               let subject = currentTest["subject"]?.stringValue,
+               let score = currentTest["score"]?.intValue,
+               let outof = currentTest["outof"]?.intValue {
                 
-                if let Name = currentTest["Name"]?.stringValue,
-                   let subject = currentTest["subject"]?.stringValue,
-                   let score = currentTest["score"]?.intValue,
-                   let outof = currentTest["outof"]?.intValue {
-                    
-                    TestItemView(Name: Name,
-                                 score: score,
-                                 outof: outof,
-                                 subject: subject)
-                }
-                
+                TestItemView(Name: Name,
+                             score: score,
+                             outof: outof,
+                             subject: subject)
             }
             
-            
-            .navigationTitle("Recent Tests")
-            
-            .toolbar {
-                ToolbarItem(placement: .primaryAction) {
-                    optionPopUp()
-
-                }
-            }
-            
-            
-            
-
         }
         
         
+        .navigationTitle("Recent Tests")
+        
+        
     }
-  
+    init(subjectId: Int){
+        _tests = BlackbirdLiveQuery(tableName: "Test", { db in
+            try await db.query("SELECT * FROM TestsWithSubjectNames WHERE Subject_id = \(subjectId)")
+        })
+        self.subjectId = subjectId
+    }
+    
+    
+    
+    
+    
+    
+    
+    
+ 
 }
 
 
-struct TestListView_Previews: PreviewProvider {
-    static var previews: some View {
-        TestListView(subjectId: 1)
-            .environment(\.blackbirdDatabase, AppDatabase.instance)
-    }
-}

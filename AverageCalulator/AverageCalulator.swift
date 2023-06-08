@@ -9,28 +9,23 @@ import SwiftUI
 
 @main
 struct AverageCalulatorApp: App {
+    @BlackbirdLiveQuery(tableName:"Test", { db in
+        try await db.query("SELECT * FROM SubjectsWithStats")
+    }) var subjects
+    
     var body: some Scene {
         WindowGroup {
             TabView {
                 
-                TestsGroupedBySubjectListView()
-                    .tabItem{
-                        Image(systemName:"plus")
-                        Text("subject thing")
-                    }
+                
              
-
-                TestListView()
+                TestsGroupedBySubjectListView(averageScore: 3, averageOutof: 3)
                     .tabItem {
                         Image(systemName: "plus.circle")
                         Text("Recent Tests")
                     }
 
-                SubjectListView()
-                    .tabItem {
-                        Image(systemName: "person")
-                        Text("Subjects")
-                    }
+        
                 
             }
             .environment(\.blackbirdDatabase, AppDatabase.instance)

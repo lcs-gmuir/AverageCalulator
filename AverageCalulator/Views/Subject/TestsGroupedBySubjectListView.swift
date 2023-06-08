@@ -9,25 +9,25 @@ import SwiftUI
 
 struct TestsGroupedBySubjectListView: View {
     
-    @BlackbirdLiveQuery(tableName:"Tests", { db in
+    @BlackbirdLiveQuery(tableName:"Test", { db in
         try await db.query("SELECT * FROM SubjectsWithStats")
     }) var subjects
     
     let averageScore: Int
     let averageOutof: Int
-    
+
     var doubleScore: Double{
         return Double(averageScore)
     }
-    
+
     var doubleOutOf: Double{
         return Double(averageOutof)
     }
-    
+
     var percentage: Double {
         return doubleScore/doubleOutOf*100
     }
-    
+
     var percentageRounded: Int {
         return Int(percentage)
     }
@@ -41,7 +41,9 @@ struct TestsGroupedBySubjectListView: View {
                 ForEach(subjects.results, id: \.self) { currentSubject in
                     
                     Section(content:{
-                        Text ("movies will go here")
+                        if let subjectId = currentSubject["Subject_id"]?.intValue {
+                            TestListView(subjectId: subjectId)
+                        }
                     }, header: {
                         
                         if let subjectName = currentSubject["subject"]?.stringValue,
