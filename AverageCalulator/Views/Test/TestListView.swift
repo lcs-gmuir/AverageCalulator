@@ -9,8 +9,10 @@ import SwiftUI
 
 struct TestListView: View {
     
+    let subjectId: Int
+    
     @BlackbirdLiveQuery(tableName:"Test", { db in
-        try await db.query("SELECT * FROM TestsWithSubjectNames")
+        try await db.query("SELECT * FROM TestsWithSubjectNames WHERE subject_id = \(subjectId)")
     }) var tests
     
  
@@ -47,23 +49,7 @@ struct TestListView: View {
             
             
             
-//            add test Button
-//                        .toolbar {
-//                            ToolbarItem(placement: .primaryAction) {
-//                                Button(action: {
-//                                    showingAddTestView = true
-//                                }, label: {
-//                                    Text("New Test")
-//                                        .font(.title2)
-//                                })
-//                                .sheet(isPresented: $showingAddTestView) {
-//                                    AddTestView()
-//                                        .presentationDetents([.fraction(0.47)])
-//
-//                                }
-//
-//                            }
-//                        }
+
         }
         
         
@@ -74,7 +60,7 @@ struct TestListView: View {
 
 struct TestListView_Previews: PreviewProvider {
     static var previews: some View {
-        TestListView()
+        TestListView(subjectId: 1)
             .environment(\.blackbirdDatabase, AppDatabase.instance)
     }
 }
