@@ -10,6 +10,11 @@ import SwiftUI
 // Testing
 struct AddSubjectView: View {
     @Environment(\.blackbirdDatabase) var db: Blackbird.Database?
+    @BlackbirdLiveModels({ db in
+        try await Subject.read(from: db)
+    }) var subjects
+    
+    
     @State var name = ""
     
     var body: some View {
@@ -34,8 +39,13 @@ struct AddSubjectView: View {
                             
                         }
                         
+                        
                     }
                     
+                    List(subjects.results) {  currentSubject in
+                            Text(currentSubject.name).tag(currentSubject.id)
+                    }
+
                     Button(action: {
                         Task{
                             try await db!.transaction { core in
@@ -62,16 +72,9 @@ struct AddSubjectView: View {
         
         
     }
-    
-    
-    
-    
-    
-    struct AddSubjectView_Previews: PreviewProvider {
-        static var previews: some View {
-            AddSubjectView()
-                .environment(\.blackbirdDatabase, AppDatabase.instance)
-        }
-    }
-    
 }
+    
+    
+    
+    
+
