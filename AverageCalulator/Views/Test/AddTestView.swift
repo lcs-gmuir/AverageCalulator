@@ -13,6 +13,7 @@ struct AddTestView: View {
     @BlackbirdLiveModels({ db in
     try await Subject.read(from: db)
 }) var subjects
+    
 
 @State var Name = ""
 @State var score = ""
@@ -66,7 +67,7 @@ var body: some View {
                                         Name,
                                         score,
                                         outof,
-                                    subject_id2
+                                    subject_id
                                     
                                     )
                                     VALUES (
