@@ -41,11 +41,7 @@ struct AddSubjectView: View {
                         
                         
                     }
-                    
-                    List(subjects.results) {  currentSubject in
-                            Text(currentSubject.name).tag(currentSubject.id)
-                    }
-
+                  SubjectListView()
                     Button(action: {
                         Task{
                             try await db!.transaction { core in
@@ -59,6 +55,9 @@ struct AddSubjectView: View {
                             .font(.title2)
                         
                     })
+                    }
+
+               
                 }
                 
                 
@@ -72,7 +71,7 @@ struct AddSubjectView: View {
         
         
     }
-}
+
     
     
     
