@@ -15,19 +15,7 @@ struct AverageCalulatorApp: App {
     
     var body: some Scene {
         WindowGroup {
-            TabView {
-                
-                
-             
-                TestsGroupedBySubjectListView(averageScore: 3, averageOutof: 3)
-                    .tabItem {
-                        Image(systemName: "plus.circle")
-                        Text("Recent Tests")
-                    }
-
-        
-                
-            }
+            TestsGroupedBySubjectListView()
             .environment(\.blackbirdDatabase, AppDatabase.instance)
 
 

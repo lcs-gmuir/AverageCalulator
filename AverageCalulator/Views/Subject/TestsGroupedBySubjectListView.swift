@@ -13,24 +13,24 @@ struct TestsGroupedBySubjectListView: View {
         try await db.query("SELECT * FROM SubjectsWithStats")
     }) var subjects
     
-    let averageScore: Int
-    let averageOutof: Int
-
-    var doubleScore: Double{
-        return Double(averageScore)
-    }
-
-    var doubleOutOf: Double{
-        return Double(averageOutof)
-    }
-
-    var percentage: Double {
-        return doubleScore/doubleOutOf*100
-    }
-
-    var percentageRounded: Int {
-        return Int(percentage)
-    }
+//    let averageScore: Int
+//    let averageOutof: Int
+//
+//    var doubleScore: Double{
+//        return Double(averageScore)
+//    }
+//
+//    var doubleOutOf: Double{
+//        return Double(averageOutof)
+//    }
+//
+//    var percentage: Double {
+//        return doubleScore/doubleOutOf*100
+//    }
+//
+//    var percentageRounded: Int {
+//        return Int(percentage)
+//    }
     
     var body: some View {
         
@@ -53,7 +53,7 @@ struct TestsGroupedBySubjectListView: View {
                             HStack{
                                 Text(subjectName)
                                 Text("\(averageScore)/\(averageOutof)")
-                                Text("\(percentageRounded)")
+//                                Text("\(percentageRounded)")
                                 
                             }
                            

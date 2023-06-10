@@ -10,9 +10,7 @@ import SwiftUI
 // Testing
 struct AddSubjectView: View {
     @Environment(\.blackbirdDatabase) var db: Blackbird.Database?
-    @BlackbirdLiveModels({ db in
-        try await Subject.read(from: db)
-    }) var subjects
+  
     
     
     @State var name = ""

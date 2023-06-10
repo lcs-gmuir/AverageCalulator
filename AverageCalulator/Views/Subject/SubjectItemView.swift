@@ -16,7 +16,7 @@ struct SubjectItemView: View {
                 .font(.title)
                 .bold()
             Spacer()
-            Text("avg")
+          
         }
         }
     }
